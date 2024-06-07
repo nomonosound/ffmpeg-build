@@ -62,6 +62,7 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-demuxer=mov
     --enable-demuxer=m4v
     --enable-demuxer=mp3
+    --enable-demuxer=mp4
     --enable-demuxer=mpc
     --enable-demuxer=mpc8
     --enable-demuxer=ogg
