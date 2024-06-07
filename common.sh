@@ -118,7 +118,7 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-decoder=mp3on4float
     --enable-decoder=mpc7
     --enable-decoder=mpc8
-    --enable-decoder=opus
+    --enable-decoder=libopus
     --enable-decoder=ra_144
     --enable-decoder=ra_288
     --enable-decoder=ralf
@@ -186,4 +186,6 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-muxer=dash
     --enable-muxer=ogg
     --enable-muxer=opus
+
+    --enable-libopus
 )
