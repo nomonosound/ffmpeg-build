@@ -184,4 +184,5 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-encoder=pcm_s16le
 
     --enable-muxer=dash
+    --enable-muxer=ogg
 )
