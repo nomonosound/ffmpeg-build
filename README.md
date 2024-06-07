@@ -19,3 +19,7 @@ Supported platforms:
 ## Tag naming scheme
 
 For example, the first custom build of ffmpeg 5.1.2 would be tagged with name `v5.1.2-nomono-audio-v1`
+
+## Motivation
+
+Small binaries
