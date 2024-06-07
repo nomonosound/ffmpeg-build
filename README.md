@@ -15,3 +15,7 @@ Supported platforms:
   - macOS
       * `x86_64-apple-macos10.9` (macOS Mavericks and newer on Intel CPU)
       * `arm64-apple-macos11` (macOS Big Sur and newer on Apple M1 CPU)
+
+## Tag naming scheme
+
+For example, the first custom build of ffmpeg 5.1.2 would be tagged with name `v5.1.2-nomono-audio-v1`
