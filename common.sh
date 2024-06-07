@@ -178,4 +178,10 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-parser=mpegaudio
     --enable-parser=tak
     --enable-parser=vorbis
+
+    --enable-encoder=flac
+    --enable-encoder=libopus
+    --enable-encoder=pcm_s16le
+
+    --enable-muxer=dash
 )
