@@ -47,6 +47,8 @@ FFMPEG_CONFIGURE_FLAGS=(
     --disable-protocols
     --enable-protocol=file
     --enable-protocol=pipe
+    --enable-protocol=http
+    --enable-protocol=https
 
     --enable-demuxer=image2
     --enable-demuxer=aac
@@ -56,6 +58,7 @@ FFMPEG_CONFIGURE_FLAGS=(
     --enable-demuxer=asf
     --enable-demuxer=au
     --enable-demuxer=avi
+    --enable-demuxer=dash
     --enable-demuxer=flac
     --enable-demuxer=flv
     --enable-demuxer=matroska
