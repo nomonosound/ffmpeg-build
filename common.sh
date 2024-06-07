@@ -185,4 +185,5 @@ FFMPEG_CONFIGURE_FLAGS=(
 
     --enable-muxer=dash
     --enable-muxer=ogg
+    --enable-muxer=opus
 )

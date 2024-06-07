@@ -2,7 +2,7 @@ Static audio-only FFmpeg builds
 ===============================
 
 This project contains scripts for small static audio-only FFmpeg builds that are used
-for Chromaprint packaging.
+for some of Nomono's software.
 
 Building is done using GitHub Actions. You can find the built binaries on the releases page.
 
