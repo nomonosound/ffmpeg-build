@@ -11,7 +11,7 @@ jobs:
       matrix:
         arch:
           - x86_64
-          - arm64
+          #- arm64 # disabled for now because it doesn't work because an arm64 build of libopus is not installed
     env:
       ARCH: ${{ matrix.arch }}
     steps:
@@ -34,6 +34,7 @@ jobs:
           path: artifacts/
 
   package-windows:
+    if: false # disabled for now because it doesn't work because a Windows build of libopus is not installed
     runs-on: ubuntu-20.04
     strategy:
       matrix:
@@ -56,6 +57,7 @@ jobs:
           path: artifacts/
 
   package-macos:
+    if: false # disabled for now because it doesn't work because a macOS build of libopus is not installed
     runs-on: macos-latest
     strategy:
       matrix:
