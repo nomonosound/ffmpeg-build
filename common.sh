@@ -5,30 +5,33 @@ FFMPEG_TARBALL=ffmpeg-$FFMPEG_VERSION.tar.bz2
 FFMPEG_TARBALL_URL=http://ffmpeg.org/releases/$FFMPEG_TARBALL
 
 FFMPEG_CONFIGURE_FLAGS=(
-  --disable-audiotoolbox
+  # Disable uneeded components
   --disable-avdevice
-  --disable-bsfs
   --disable-bzlib
+  --disable-everything
   --disable-debug
-  --disable-decoders
-  --disable-demuxers
   --disable-doc
-  --disable-encoders
-  --disable-filters
-  --disable-hwaccels
   --disable-iconv
-  --disable-indevs
-  --disable-muxers
   --disable-network
-  --disable-nvenc
-  --disable-outdevs
-  --disable-parsers
+  --disable-pixelutils
   --disable-programs
-  --disable-protocols
+  --disable-postproc
   --disable-shared
   --disable-swscale
-  --disable-videotoolbox
   --disable-zlib
+  # Disable unneeded hardware acceleration (mainly video-specific)
+  --disable-amf
+  --disable-audiotoolbox
+  --disable-cuvid
+  --disable-d3d11va
+  --disable-dxva2
+  --disable-nvenc
+  --disable-nvdec
+  --disable-v4l2-m2m
+  --disable-vaapi
+  --disable-vdpau
+  --disable-videotoolbox
+  # Reenable what we need
   --enable-decoder=aac*
   --enable-decoder=ac3
   --enable-decoder=alac
@@ -64,7 +67,6 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-demuxer=asf
   --enable-demuxer=au
   --enable-demuxer=avi
-  --enable-demuxer=dash
   --enable-demuxer=dsf
   --enable-demuxer=flac
   --enable-demuxer=flv
@@ -73,7 +75,6 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-demuxer=matroska
   --enable-demuxer=mov
   --enable-demuxer=mp3
-  --enable-demuxer=mp4
   --enable-demuxer=mpc
   --enable-demuxer=mpc8
   --enable-demuxer=ogg
@@ -106,20 +107,23 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-demuxer=xwma
   --enable-encoder=flac
   --enable-encoder=libopus
-  --enable-encoder=pcm_s16le
+  --enable-encoder=pcm*
   --enable-ffmpeg
   --enable-ffprobe
   --enable-filter=aformat
   --enable-filter=anull
+  --enable-filter=aresample
   --enable-filter=atrim
   --enable-filter=format
   --enable-filter=null
   --enable-filter=setpts
   --enable-filter=trim
   --enable-libopus
-  --enable-muxer=dash
   --enable-muxer=ogg
   --enable-muxer=opus
+  --enable-muxer=pcm*
+  --enable-muxer=wav
+  --enable-muxer=webm
   --enable-parser=aac
   --enable-parser=aac_latm
   --enable-parser=ac3
@@ -132,8 +136,6 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-parser=vorbis
   --enable-pic
   --enable-protocol=file
-  --enable-protocol=http
-  --enable-protocol=https
   --enable-protocol=pipe
   --enable-rdft
   --enable-static
