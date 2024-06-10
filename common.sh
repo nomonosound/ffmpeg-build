@@ -5,7 +5,7 @@ FFMPEG_TARBALL=ffmpeg-$FFMPEG_VERSION.tar.bz2
 FFMPEG_TARBALL_URL=http://ffmpeg.org/releases/$FFMPEG_TARBALL
 
 FFMPEG_CONFIGURE_FLAGS=(
-  --disable-audiotoolbox
+  # Disable uneeded components
   --disable-avdevice
   --disable-bzlib
   --disable-everything
@@ -13,12 +13,25 @@ FFMPEG_CONFIGURE_FLAGS=(
   --disable-doc
   --disable-iconv
   --disable-network
-  --disable-nvenc
+  --disable-pixelutils
   --disable-programs
+  --disable-postproc
   --disable-shared
   --disable-swscale
-  --disable-videotoolbox
   --disable-zlib
+  # Disable unneeded hardware acceleration (mainly video-specific)
+  --disable-amf
+  --disable-audiotoolbox
+  --disable-cuvid
+  --disable-d3d11va
+  --disable-dxva2
+  --disable-nvenc
+  --disable-nvdec
+  --disable-v4l2-m2m
+  --disable-vaapi
+  --disable-vdpau
+  --disable-videotoolbox
+  # Reenable what we need
   --enable-decoder=aac*
   --enable-decoder=ac3
   --enable-decoder=alac
@@ -123,8 +136,6 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-parser=vorbis
   --enable-pic
   --enable-protocol=file
-  --enable-protocol=http
-  --enable-protocol=https
   --enable-protocol=pipe
   --enable-rdft
   --enable-static
