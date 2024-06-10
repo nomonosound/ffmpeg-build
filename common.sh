@@ -65,6 +65,8 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-demuxer=au
   --enable-demuxer=avi
   --enable-demuxer=dash
+  # libxml2 needed by dash
+  --enable-libxml2
   --enable-demuxer=dsf
   --enable-demuxer=flac
   --enable-demuxer=flv
@@ -73,7 +75,6 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-demuxer=matroska
   --enable-demuxer=mov
   --enable-demuxer=mp3
-  --enable-demuxer=mp4
   --enable-demuxer=mpc
   --enable-demuxer=mpc8
   --enable-demuxer=ogg
