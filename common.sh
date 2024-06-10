@@ -106,11 +106,12 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-demuxer=xwma
   --enable-encoder=flac
   --enable-encoder=libopus
-  --enable-encoder=pcm_s16le
+  --enable-encoder=pcm*
   --enable-ffmpeg
   --enable-ffprobe
   --enable-filter=aformat
   --enable-filter=anull
+  --enable-filter=aresample
   --enable-filter=atrim
   --enable-filter=format
   --enable-filter=null
@@ -120,6 +121,8 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-muxer=dash
   --enable-muxer=ogg
   --enable-muxer=opus
+  --enable-muxer=wav
+  --enable-muxer=pcm*
   --enable-parser=aac
   --enable-parser=aac_latm
   --enable-parser=ac3
