@@ -7,24 +7,14 @@ FFMPEG_TARBALL_URL=http://ffmpeg.org/releases/$FFMPEG_TARBALL
 FFMPEG_CONFIGURE_FLAGS=(
   --disable-audiotoolbox
   --disable-avdevice
-  --disable-bsfs
   --disable-bzlib
+  --disable-everything
   --disable-debug
-  --disable-decoders
-  --disable-demuxers
   --disable-doc
-  --disable-encoders
-  --disable-filters
-  --disable-hwaccels
   --disable-iconv
-  --disable-indevs
-  --disable-muxers
   --disable-network
   --disable-nvenc
-  --disable-outdevs
-  --disable-parsers
   --disable-programs
-  --disable-protocols
   --disable-shared
   --disable-swscale
   --disable-videotoolbox
@@ -64,9 +54,6 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-demuxer=asf
   --enable-demuxer=au
   --enable-demuxer=avi
-  --enable-demuxer=dash
-  # libxml2 needed by dash
-  --enable-libxml2
   --enable-demuxer=dsf
   --enable-demuxer=flac
   --enable-demuxer=flv
@@ -119,11 +106,11 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-filter=setpts
   --enable-filter=trim
   --enable-libopus
-  --enable-muxer=dash
   --enable-muxer=ogg
   --enable-muxer=opus
-  --enable-muxer=wav
   --enable-muxer=pcm*
+  --enable-muxer=wav
+  --enable-muxer=webm
   --enable-parser=aac
   --enable-parser=aac_latm
   --enable-parser=ac3
