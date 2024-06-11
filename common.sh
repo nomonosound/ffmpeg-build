@@ -107,6 +107,7 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-demuxer=xwma
   --enable-encoder=flac
   --enable-encoder=libopus
+  --enable-encoder=libmp3lame
   --enable-encoder=pcm*
   --enable-ffmpeg
   --enable-ffprobe
@@ -118,7 +119,9 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-filter=null
   --enable-filter=setpts
   --enable-filter=trim
+  --enable-libmp3lame
   --enable-libopus
+  --enable-muxer=mp3
   --enable-muxer=ogg
   --enable-muxer=opus
   --enable-muxer=pcm*
