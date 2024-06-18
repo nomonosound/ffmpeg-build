@@ -92,7 +92,6 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-encoder=libmp3lame
   --enable-encoder=pcm*
   --enable-ffmpeg
-  --enable-ffprobe
   --enable-filter=aformat
   --enable-filter=anull
   --enable-filter=aresample
