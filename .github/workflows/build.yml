@@ -93,12 +93,12 @@ jobs:
         run: |
           mkdir artifacts/release/
           cd artifacts/
-          ls -l .
+          ls -l ffmpeg-*/
           for dir in ffmpeg-*/ffmpeg-*
           do
             name=$(basename $dir)
             echo $dir
-            echo $name
+            echo $(dirname $dir)
             tar czf release/$name.tar.gz -C $(dirname $dir) $name
           done
           ls -l release/
