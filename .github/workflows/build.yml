@@ -96,7 +96,7 @@ jobs:
           for dir in ffmpeg-*
           do
             name=$(basename $dir)
-            tar czf release/$name.tar.gz -C $name
+            tar czf release/$name.tar.gz $name
           done
           ls -l release/
       - name: Release
