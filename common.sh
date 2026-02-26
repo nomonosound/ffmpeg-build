@@ -124,6 +124,8 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-pic
   --enable-protocol=file
   --enable-protocol=pipe
+  --enable-protocol=http
+  --enable-protocol=async
   --enable-rdft
   --enable-static
 )
