@@ -6,7 +6,7 @@ on:
 
 jobs:
   package-linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         arch:
@@ -93,9 +93,12 @@ jobs:
         run: |
           mkdir artifacts/release/
           cd artifacts/
+          ls -l .
           for dir in ffmpeg-*/ffmpeg-*
           do
             name=$(basename $dir)
+            echo $dir
+            echo $name
             tar czf release/$name.tar.gz -C $(dirname $dir) $name
           done
           ls -l release/
