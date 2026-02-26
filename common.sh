@@ -12,7 +12,6 @@ FFMPEG_CONFIGURE_FLAGS=(
   --disable-debug
   --disable-doc
   --disable-iconv
-  --disable-network
   --disable-pixelutils
   --disable-programs
   --disable-postproc
@@ -122,9 +121,13 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-parser=tak
   --enable-parser=vorbis
   --enable-pic
+  --enable-openssl
   --enable-protocol=file
   --enable-protocol=pipe
   --enable-protocol=http
+  --enable-protocol=https
+  --enable-protocol=tcp
+  --enable-protocol=tls
   --enable-protocol=async
   --enable-rdft
   --enable-static
