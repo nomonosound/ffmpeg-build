@@ -6,7 +6,7 @@ on:
 
 jobs:
   package-linux:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         arch:
@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: ./build-linux.sh
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v7
         with:
           name: ffmpeg-linux-${{ env.ARCH }}
           path: artifacts/
@@ -51,7 +51,7 @@ jobs:
       - name: Build
         run: ./build-windows.sh
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v7
         with:
           name: ffmpeg-windows-${{ env.ARCH }}
           path: artifacts/
@@ -74,7 +74,7 @@ jobs:
       - name: Build
         run: ./build-macos.sh
       - name: Archive artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v7
         with:
           name: ffmpeg-${{ matrix.target }}
           path: artifacts/
@@ -86,17 +86,17 @@ jobs:
       #- package-windows # disabled for now
       #- package-macos # disabled for now
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v8
         with:
           path: artifacts/
       - name: Make tarballs
         run: |
           mkdir artifacts/release/
           cd artifacts/
-          for dir in ffmpeg-*/ffmpeg-*
+          for dir in ffmpeg-*
           do
             name=$(basename $dir)
-            tar czf release/$name.tar.gz -C $(dirname $dir) $name
+            tar czf release/$name.tar.gz $name
           done
           ls -l release/
       - name: Release
