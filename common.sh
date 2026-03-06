@@ -105,7 +105,9 @@ FFMPEG_CONFIGURE_FLAGS=(
   --enable-filter=trim
   --enable-libmp3lame
   --enable-libopus
+  --enable-muxer=ismv
   --enable-muxer=mp3
+  --enable-muxer=mp4
   --enable-muxer=ogg
   --enable-muxer=opus
   --enable-muxer=pcm*
